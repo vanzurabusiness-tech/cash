@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Earn Extra Cash</title>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JYQ2MWEDB9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JYQ2MWEDB9');
+  </script>
+  
   <style>
     :root {
       --main-green: #00e63f;
@@ -106,6 +116,27 @@
 
     .subtext span {
       color: var(--main-green);
+    }
+
+    .live-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--main-green);
+      border-radius: 50%;
+      margin-right: 6px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+      }
     }
 
     .section {
@@ -216,14 +247,14 @@
 
   <div class="container">
     <h1>Claim Your <span style="color: var(--main-green);">$750</span> Reward</h1>
-    <p class="subtitle">Simple tasks. Instant verification.</p>
+    <p class="subtitle">Simple tasks. Fast verification. No fees.</p>
 
     <div class="gift-card">
       <img src="/images/cashcard2.jpeg" alt="Gift Card">
     </div>
 
-    <a href="https://glctrk.org/aff_c?offer_id=1595&aff_id=167172" class="button">Start Earning Now →</a>
-    <p class="subtext"><span>✓</span> 1k+ users already earning daily</p>
+    <a href="https://glctrk.org/aff_c?offer_id=1595&aff_id=167172" class="button" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Claim Reward Button'});">Claim My $750 Reward →</a>
+    <p class="subtext"><span class="live-dot"></span> 1,248 users have claimed rewards today</p>
   </div>
 
   <div class="section">

@@ -21,7 +21,7 @@
             font-family: 'Inter', sans-serif; 
             background-color: #050505; 
             color: white; 
-            padding-bottom: 100px; /* Reduced bottom padding */
+            padding-bottom: 100px; 
         }
 
         /* Cash App Green */
@@ -93,7 +93,7 @@
             padding: 20px 16px; 
             text-align: center;
             color: black;
-            margin-bottom: 20px; 
+            margin-bottom: 12px; /* Reduced to fit counter */
             box-shadow: 0 8px 25px rgba(0, 214, 50, 0.15);
             position: relative;
             overflow: hidden;
@@ -126,6 +126,14 @@
                 <div class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></div>
                 <span class="text-[9px] font-bold uppercase">Ready for Transfer</span>
             </div>
+        </div>
+
+        <div class="text-center mb-6 flex items-center justify-center gap-2">
+            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_#22c55e]"></div>
+            <p class="text-[10px] font-medium text-gray-400">
+                <span id="claim-counter" class="text-white font-bold tabular-nums">1,219</span> 
+                users claimed rewards today
+            </p>
         </div>
     </div>
 
@@ -169,6 +177,19 @@
     </div>
 
     <script>
+        // Live Counter Logic
+        const counterElement = document.getElementById('claim-counter');
+        let count = 1219;
+
+        // Update every 4 seconds
+        setInterval(() => {
+            // Add random number between 1 and 3
+            const increment = Math.floor(Math.random() * 3) + 1;
+            count += increment;
+            // Update text with commas for thousands
+            counterElement.innerText = count.toLocaleString();
+        }, 4000);
+
         // Source Tracking (Kept for your manager)
         (function() {
             function appendSource() {

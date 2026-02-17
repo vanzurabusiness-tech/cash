@@ -1,305 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Earn Extra Cash</title>
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JYQ2MWEDB9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JYQ2MWEDB9');
-  </script>
-  
-  <style>
-    :root {
-      --main-green: #00e63f;
-      --button-green: #00c83a;
-    }
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JW1QWB73B1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JW1QWB73B1');
+    </script>
 
-    body {
-      font-family: 'Inter', Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #1a1a1a;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cash App Reward Status</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #050505; 
+            color: white; 
+            padding-bottom: 120px;
+        }
 
-    .container {
-      max-width: 420px;
-      width: 90%;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      overflow: hidden;
-      margin-top: 20px;
-      padding: 20px;
-      box-sizing: border-box;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: slideUp 0.8s ease-out forwards;
-    }
+        /* Cash App Green */
+        .text-cash { color: #00D632; }
+        .bg-cash { background-color: #00D632; }
+        .border-cash { border-color: #00D632; }
+        
+        /* Card Styling */
+        .step-card {
+            background-color: #121212;
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .step-circle {
+            width: 28px;
+            height: 28px;
+            background-color: #1A1A1A;
+            border: 1px solid #333;
+            color: #00D632;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 13px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
 
-    @keyframes slideUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+        /* Sticky Footer Button */
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, #050505 90%, transparent);
+            padding: 20px 24px 40px 24px;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+        }
 
-    h1 {
-      text-align: center;
-      font-size: 2.1rem;
-      font-weight: 900;
-      margin-top: 4px;
-      margin-bottom: 6px;
-      color: #000;
-      letter-spacing: -1px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
+        .btn-sticky {
+            background-color: #00D632;
+            color: #000;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            padding: 18px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 214, 50, 0.2);
+            transition: transform 0.1s;
+        }
+        .btn-sticky:active { transform: scale(0.98); }
 
-    p.subtitle {
-      text-align: center;
-      color: #666;
-      margin: 0 0 16px;
-      font-size: 0.95rem;
-    }
+        .balance-card {
+            background: linear-gradient(145deg, #00D632 0%, #00A026 100%);
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+            color: black;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 214, 50, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shine {
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+            transform: skewX(-20deg);
+            animation: shine 3s infinite;
+        }
+        @keyframes shine { 100% { left: 200%; } }
 
-    .gift-card {
-      display: flex;
-      justify-content: center;
-    }
-
-    .gift-card img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .button {
-      display: block;
-      background-color: var(--button-green);
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      padding: 14px;
-      font-weight: 600;
-      border-radius: 8px;
-      margin: 20px auto 8px;
-      width: 80%;
-      font-size: 1rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-      box-shadow: 0 4px 10px rgba(0,200,58,0.3);
-    }
-
-    .button:hover {
-      background-color: #00b236;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,200,58,0.35);
-    }
-
-    .subtext {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #666;
-      margin-bottom: 8px;
-    }
-
-    .subtext span {
-      color: var(--main-green);
-    }
-
-    .live-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      background-color: var(--main-green);
-      border-radius: 50%;
-      margin-right: 6px;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.6;
-        transform: scale(1.1);
-      }
-    }
-
-    .section {
-      background: #fff;
-      border-top: 1px solid #eee;
-      margin-top: 12px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      max-width: 420px;
-      width: 90%;
-      padding: 20px;
-      box-sizing: border-box;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: slideUp 0.8s ease-out forwards;
-      animation-delay: 0.2s;
-    }
-
-    .section:nth-of-type(3) {
-      animation-delay: 0.4s;
-    }
-
-    .section h2 {
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-      color: #111;
-      text-align: left;
-    }
-
-    .step {
-      display: flex;
-      align-items: center;
-      margin-bottom: 14px;
-    }
-
-    .step-icon {
-      width: 36px;
-      height: 36px;
-      background-color: var(--main-green);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 18px;
-      margin-right: 12px;
-      flex-shrink: 0;
-    }
-
-    .faq {
-      margin-top: 8px;
-    }
-
-    details {
-      border-top: 1px solid #eee;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      padding: 12px 0;
-    }
-
-    details:last-child {
-      border-bottom: 1px solid #eee;
-    }
-
-    summary {
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      outline: none;
-    }
-
-    summary::after {
-      content: '›';
-      transform: rotate(90deg);
-      transition: transform 0.3s ease;
-      color: var(--main-green);
-      font-size: 1.2rem;
-    }
-
-    details[open] summary::after {
-      transform: rotate(-90deg);
-    }
-
-    details p {
-      margin: 0;
-      color: #555;
-      font-size: 0.9rem;
-      line-height: 1.5;
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    details[open] p {
-      margin-top: 8px;
-      max-height: 200px;
-      opacity: 1;
-    }
-  </style>
+    </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen px-5 py-8 max-w-md mx-auto">
 
-  <div class="container">
-    <h1>Claim Your <span style="color: var(--main-green);">$750</span> Reward</h1>
-    <p class="subtitle">Simple tasks. Fast verification. No fees.</p>
+    <div class="mb-8">
+        <div class="flex items-center justify-center gap-2 mb-6 opacity-80">
+            <i class="fas fa-shield-alt text-cash"></i>
+            <span class="text-xs font-bold tracking-widest uppercase text-gray-400">Official Reward Program</span>
+        </div>
 
-    <div class="gift-card">
-      <img src="/images/cashcard2.jpeg" alt="Gift Card">
+        <div class="balance-card">
+            <div class="shine"></div>
+            <p class="text-[10px] font-black uppercase tracking-widest opacity-60 mb-1">Pending Balance</p>
+            <h1 class="text-5xl font-black tracking-tighter">$750.00</h1>
+            <div class="mt-4 inline-flex items-center gap-2 bg-black/10 px-3 py-1 rounded-full">
+                <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <span class="text-[10px] font-bold uppercase">Ready for Transfer</span>
+            </div>
+        </div>
     </div>
 
-    <a href="https://glctrk.org/aff_c?offer_id=1595&aff_id=167172" class="button" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Claim Reward Button'});">Claim My $750 Reward →</a>
-    <p class="subtext"><span class="live-dot"></span> 1,248 users have claimed rewards today</p>
-  </div>
+    <div class="mb-4">
+        <div class="flex items-center justify-between mb-4 px-2">
+            <p class="text-[11px] font-bold text-gray-500 uppercase tracking-widest">Steps to Claim</p>
+            <span class="text-[10px] text-cash bg-green-900/20 px-2 py-1 rounded border border-green-900/50">Time: ~10 Mins</span>
+        </div>
 
-  <div class="section">
-    <h2>How It Works</h2>
+        <div class="step-card">
+            <div class="step-circle">1</div>
+            <div>
+                <h3 class="font-bold text-[16px] leading-tight mb-1">Register Basic Info</h3>
+                <p class="text-gray-400 text-[12px] leading-snug">Enter your email and shipping info so we know where to send the reward.</p>
+            </div>
+        </div>
 
-    <div class="step">
-      <div class="step-icon">1</div>
-      <div><strong>Secure Your Spot.</strong><br><small>Register your email to see available rewards in your area.</small></div>
+        <div class="step-card border-l-2 border-l-cash">
+            <div class="step-circle bg-cash text-black border-none">2</div>
+            <div>
+                <h3 class="font-bold text-[16px] leading-tight mb-1 text-white">Complete Sponsor Deals</h3>
+                <p class="text-gray-400 text-[12px] leading-snug">
+                    <span class="text-cash font-bold">Requirement:</span> Complete 2-3 quick deals (apps, games, or trials) to verify you are human.
+                </p>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-circle">3</div>
+            <div>
+                <h3 class="font-bold text-[16px] leading-tight mb-1">Instant Transfer</h3>
+                <p class="text-gray-400 text-[12px] leading-snug">Once the deals are verified, the $750 is sent to your Cash App ID instantly.</p>
+            </div>
+        </div>
     </div>
 
-    <div class="step">
-      <div class="step-icon">2</div>
-      <div><strong>Choose Your Tasks.</strong><br><small>Pick from a curated list of apps, surveys, and brand offers.</small></div>
+    <div class="mt-6 px-4 py-4 bg-[#111] rounded-xl border border-gray-800">
+        <p class="text-[10px] text-gray-500 leading-relaxed text-center">
+            <i class="fas fa-info-circle mr-1"></i> 
+            **Transparency:** Our sponsors pay us when you complete the deals in Step 2. That is how we can afford to send you the $750 reward. It's a fair trade for 10 minutes of your time.
+        </p>
     </div>
 
-    <div class="step">
-      <div class="step-icon">3</div>
-      <div><strong>Cash Out.</strong><br><small>Once verified, your <strong>$750</strong> is sent via your preferred method.</small></div>
+    <div class="sticky-footer">
+        <a href="https://gloffers.org/aff_c?offer_id=1595&aff_id=167172" class="btn-sticky no-underline">
+            START CLAIM PROCESS →
+        </a>
     </div>
-  </div>
 
-  <div class="section">
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq">
-      <details>
-        <summary>How long does it take?</summary>
-        <p>Most members complete their required tasks in under 60 minutes. Your <strong>$750</strong> reward is then triggered for verification.</p>
-      </details>
-
-      <details>
-        <summary>What kind of tasks?</summary>
-        <p>You'll be testing popular mobile games, trying out subscription services (most with free trials), and giving feedback on new brands. You choose the tasks you like.</p>
-      </details>
-
-      <details>
-        <summary>Is there a catch?</summary>
-        <p>No catch. Brands pay us for your engagement and feedback. We simply pass the majority of those earnings back to you as a reward for your time.</p>
-      </details>
-    </div>
-  </div>
-
+    <script>
+        // Source Tracking (Kept for your manager)
+        (function() {
+            function appendSource() {
+                var s = new URLSearchParams(window.location.search).get('source'); 
+                if (!s) return;
+                document.querySelectorAll('a').forEach(function(link) {
+                    var href = link.getAttribute('href');
+                    if (!href || href.startsWith('#')) return;
+                    var sep = href.includes('?') ? '&' : '?';
+                    if (!href.includes('source=')) link.setAttribute('href', href + sep + 'source=' + encodeURIComponent(s));
+                });
+            }
+            new MutationObserver(appendSource).observe(document.body, { childList: true, subtree: true });
+            appendSource(); 
+        })();
+    </script>
 </body>
 </html>

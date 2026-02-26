@@ -39,6 +39,7 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
+            text-align: left; /* Keep text left-aligned inside centered box */
         }
         
         .step-circle {
@@ -46,7 +47,7 @@
             height: 24px;
             background-color: #1A1A1A;
             border: 1px solid #333;
-            color: #00D632;
+            color: white; /* Default color for other steps */
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -93,7 +94,7 @@
             padding: 20px 16px; 
             text-align: center;
             color: black;
-            margin-bottom: 12px; /* Reduced to fit counter */
+            margin-bottom: 12px;
             box-shadow: 0 8px 25px rgba(0, 214, 50, 0.15);
             position: relative;
             overflow: hidden;
@@ -137,10 +138,9 @@
         </div>
     </div>
 
-    <div class="mb-2">
-        <div class="flex items-center justify-between mb-3 px-1">
+    <div class="mb-2 max-w-[320px] mx-auto w-full"> 
+        <div class="text-center mb-3">
             <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Steps to Claim</p>
-            <span class="text-[9px] text-cash bg-green-900/20 px-2 py-0.5 rounded border border-green-900/50">Time: ~10 Mins</span>
         </div>
 
         <div class="step-card">
@@ -151,12 +151,12 @@
             </div>
         </div>
 
-        <div class="step-card border-l-2 border-l-cash">
-            <div class="step-circle bg-cash text-black border-none">2</div>
+        <div class="step-card border border-[#00D632]/40"> 
+            <div class="step-circle text-[#00D632] border-[#00D632]/30">2</div>
             <div>
                 <h3 class="font-bold text-[14px] leading-none mb-1 text-white">Complete Sponsor Deals</h3>
                 <p class="text-gray-400 text-[11px] leading-tight">
-                    <span class="text-cash font-bold">Requirement:</span> Complete 3-5 quick deals (apps, games, or trials) to verify you are human.
+                    <span class="text-cash font-bold">Requirement:</span> Complete 3-5 quick deals (apps, games, or trials).
                 </p>
             </div>
         </div>
@@ -165,7 +165,7 @@
             <div class="step-circle">3</div>
             <div>
                 <h3 class="font-bold text-[14px] leading-none mb-1">Instant Transfer</h3>
-                <p class="text-gray-400 text-[11px] leading-tight">Once the deals are verified, the $750 is sent to your Cash App ID instantly.</p>
+                <p class="text-gray-400 text-[11px] leading-tight">Once verified, the $750 is sent to your Cash App ID instantly.</p>
             </div>
         </div>
     </div>
@@ -181,16 +181,13 @@
         const counterElement = document.getElementById('claim-counter');
         let count = 1219;
 
-        // Update every 4 seconds
         setInterval(() => {
-            // Add random number between 1 and 3
             const increment = Math.floor(Math.random() * 3) + 1;
             count += increment;
-            // Update text with commas for thousands
             counterElement.innerText = count.toLocaleString();
         }, 4000);
 
-        // Source Tracking (Kept for your manager)
+        // Source Tracking
         (function() {
             function appendSource() {
                 var s = new URLSearchParams(window.location.search).get('source'); 

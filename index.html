@@ -14,7 +14,7 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
 @keyframes float2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-30px,-40px) scale(1.15);}}
 .container{max-width:480px;margin:0 auto;padding:60px 20px 40px;text-align:center;position:relative;z-index:1;}
 
-/* FIXED LOGO CONTAINER - Bright Green Box, Sized Up 2x */
+/* FIXED LOGO CONTAINER - Bright Green Box */
 .logo-wrapper{display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
 .logo-container{
     width:260px;
@@ -32,14 +32,14 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
 }
 .logo-container:hover{transform:scale(1.05);}
 
-/* CSS HACK: Strips the solid white background from the image, turns the logo white */
+/* Using the new transparent image and forcing it white */
 .logo-container img {
-    width: 85%;
-    height: 85%;
+    width: 80%;
+    height: auto;
+    max-height: 80%;
     object-fit: contain;
     display: block;
-    filter: grayscale(100%) invert(100%) brightness(400%) contrast(400%);
-    mix-blend-mode: screen;
+    filter: brightness(0) invert(1); 
 }
 
 .youre-in-text{font-size:clamp(26px,7.5vw,42px);font-weight:900;line-height:1.15;color:var(--brand);text-shadow:0 2px 4px rgba(0,0,0,.06);white-space:nowrap;}
@@ -78,7 +78,7 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
 
     <div class="logo-wrapper">
         <div class="logo-container">
-            <img src="https://cash-f.squarecdn.com/web/marketing/dec1a8f23038e5127dbc6dbfc4e515b6d610c440/assets/images/press/logotype.png" alt="CashApp">
+            <img src="https://miro.medium.com/1*qiWHNI_1bwyzDEXsDmtUPg.png" alt="CashApp">
         </div>
     </div>
 

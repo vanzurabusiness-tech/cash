@@ -1,280 +1,123 @@
-<!DOCTYPE html>
-<html lang="pl-PL">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-<meta name="format-detection" content="telephone=no">
-<title>Biedronka - Program Nagród</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYQ2MWEDB9"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-JYQ2MWEDB9');
-</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CashApp Rewards</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-:root {
---bg-color: #f9fafb;
---text-main: #111827;
---text-muted: #6b7280;
---biedronka-red: #e21b22;
---biedronka-yellow: #fcd116;
---card-bg: #ffffff;
---border-color: #e5e7eb;
-}
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
--webkit-tap-highlight-color: transparent;
-}
-body {
-font-family: 'Inter', -apple-system, sans-serif;
-background-color: var(--bg-color);
-color: var(--text-main);
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-.top-banner {
-width: 100%;
-background-color: var(--biedronka-yellow);
-color: var(--text-main);
-text-align: center;
-padding: 10px;
-font-size: 13px;
-font-weight: 800;
-letter-spacing: 1px;
-text-transform: uppercase;
-}
-.container {
-width: 100%;
-max-width: 500px;
-padding: 40px 20px;
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-.logo {
-max-height: 60px;
-margin-bottom: 30px;
-}
-h1 {
-font-size: 28px;
-font-weight: 800;
-text-align: center;
-line-height: 1.2;
-margin-bottom: 8px;
-color: var(--text-main);
-}
-.subtitle {
-color: var(--text-muted);
-text-align: center;
-font-size: 16px;
-line-height: 1.5;
-margin-bottom: 40px;
-font-weight: 400;
-}
-.steps-container {
-width: 100%;
-display: flex;
-flex-direction: column;
-gap: 16px;
-margin-bottom: 40px;
-}
-.step-card {
-background: var(--card-bg);
-border: 2px solid var(--border-color);
-border-radius: 20px;
-padding: 20px;
-display: flex;
-align-items: center;
-gap: 20px;
-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-}
-.step-circle {
-width: 44px;
-height: 44px;
-border-radius: 50%;
-background-color: var(--biedronka-red);
-color: #ffffff;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 18px;
-font-weight: 800;
-flex-shrink: 0;
-box-shadow: 0 4px 10px rgba(226, 27, 34, 0.3);
-}
-.step-text {
-font-size: 16px;
-font-weight: 700;
-color: var(--text-main);
-}
-.cta-btn {
-display: flex;
-align-items: center;
-justify-content: center;
-width: 100%;
-background: var(--biedronka-red);
-color: #ffffff;
-font-size: 18px;
-font-weight: 800;
-text-transform: uppercase;
-padding: 22px;
-border-radius: 40px;
-text-decoration: none;
-box-shadow: 0 10px 25px rgba(226, 27, 34, 0.4);
-transition: all 0.2s ease;
-margin-bottom: 16px;
-border: none;
-cursor: pointer;
-letter-spacing: 0.5px;
-text-align: center;
-}
-.cta-btn:active {
-transform: scale(0.97);
-box-shadow: 0 4px 15px rgba(226, 27, 34, 0.3);
-}
-.disclaimer {
-font-size: 12px;
-color: var(--text-muted);
-text-align: center;
-margin-bottom: 50px;
-line-height: 1.5;
-padding: 0 10px;
-}
-.faq-title {
-font-size: 22px;
-font-weight: 800;
-margin-bottom: 24px;
-text-align: center;
-}
-.faq-container {
-width: 100%;
-display: flex;
-flex-direction: column;
-gap: 12px;
-margin-bottom: 40px;
-}
-details {
-background: var(--card-bg);
-border: 2px solid var(--border-color);
-border-radius: 20px;
-overflow: hidden;
-}
-summary {
-padding: 20px;
-font-weight: 700;
-font-size: 15px;
-cursor: pointer;
-list-style: none;
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-summary::-webkit-details-marker {
-display: none;
-}
-summary::after {
-content: "+";
-font-size: 24px;
-font-weight: 400;
-color: var(--text-muted);
-transition: transform 0.2s ease;
-}
-details[open] summary::after {
-transform: rotate(45deg);
-}
-.faq-content {
-padding: 0 20px 20px 20px;
-color: var(--text-muted);
-font-size: 14px;
-line-height: 1.6;
-}
-.legal-footer {
-width: 100%;
-padding: 20px;
-background-color: #f3f4f6;
-color: #9ca3af;
-font-size: 10px;
-text-align: center;
-line-height: 1.5;
-border-top: 1px solid var(--border-color);
-}
+:root{--bg:#f5f5f7;--text:#1d1d1f;--muted:#6e6e73;--brand:#000;--brand2:#1d1d1f;--accent:#00D632;--accent2:#00C02B;--green:#00D632;--green2:#00C02B;--bg-card:rgba(255,255,255,.95);--border:rgba(0,0,0,.10);--brand-glow:rgba(0,214,50,.35);}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Helvetica,Arial,sans-serif;overflow-x:hidden;min-height:100vh;line-height:1.47059;font-weight:400;letter-spacing:-.01em;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(0,214,50,.10),transparent),linear-gradient(180deg,#f5f5f7 0%,#fafafa 50%,#eef1f3 100%);position:relative;}
+.bg-orb{position:fixed;border-radius:50%;filter:blur(80px);opacity:.18;pointer-events:none;z-index:0;}
+.orb1{width:400px;height:400px;background:radial-gradient(circle,rgba(0,214,50,.30),transparent);top:-100px;left:-100px;animation:float1 20s ease-in-out infinite;}
+.orb2{width:300px;height:300px;background:radial-gradient(circle,rgba(29,29,31,.18),transparent);bottom:-50px;right:-50px;animation:float2 15s ease-in-out infinite;}
+@keyframes float1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(50px,50px) scale(1.1);}}
+@keyframes float2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-30px,-40px) scale(1.15);}}
+.container{max-width:480px;margin:0 auto;padding:60px 20px 40px;text-align:center;position:relative;z-index:1;}
+.logo-wrapper{display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.logo-container{width:160px;height:90px;border-radius:24px;display:flex;align-items:center;justify-content:center;background:var(--green);border:none;box-shadow:0 10px 40px rgba(0,214,50,.22);overflow:hidden;padding:0;transition:transform .3s ease;}
+.logo-container:hover{transform:scale(1.05);}
+.logo-svg{display:flex;align-items:center;justify-content:center;gap:6px;}
+.logo-svg svg{stroke:#fff;}
+.logo-pay{color:#fff;font-weight:600;font-size:26px;letter-spacing:.3px;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',Arial,sans-serif;line-height:1;}
+.youre-in-text{font-size:clamp(26px,7.5vw,42px);font-weight:900;line-height:1.15;color:var(--brand);text-shadow:0 2px 4px rgba(0,0,0,.06);white-space:nowrap;}
+.text-neon{color:var(--green);}
+.subtitle{font-size:15px;color:var(--muted);line-height:1.5;margin-bottom:30px;padding:0 10px;}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;text-align:left;backdrop-filter:blur(20px);box-shadow:0 8px 32px rgba(0,0,0,.08);position:relative;padding:0;margin-top:40px;}
+.section-title{font-size:14px;font-weight:700;text-align:center;margin:0;padding:24px 0;color:var(--muted);font-family:-apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:1px;text-transform:uppercase;}
+.li{display:flex;gap:16px;padding:20px 24px;border-bottom:1px solid rgba(0,0,0,.06);align-items:flex-start;text-align:left;background:transparent;}
+.li:first-of-type{border-top:1px solid rgba(0,0,0,.06);}
+.li:last-child{border-bottom:0}
+.check{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--green);font-size:14px;font-weight:700;color:#fff;flex-shrink:0;box-shadow:0 0 10px var(--brand-glow);}
+.li b{display:block;color:var(--text);font-size:16px;margin-bottom:4px;font-weight:700;}
+.muted-text{color:var(--muted);font-size:13px;line-height:1.4;}
+.cta{display:block;width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff!important;font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:.5px;border:0;border-radius:16px;padding:20px;margin-top:30px;margin-bottom:40px;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,214,50,.25);transition:all .3s ease;animation:pulse 3s ease-in-out infinite;}
+.cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transition:left .5s;}
+.cta:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(0,214,50,.4);}
+.cta:hover::before{left:100%;}
+.foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.7;}
+.activation-notice{background:rgba(0,214,50,.06);border:2px solid var(--green);border-radius:16px;padding:20px;margin-top:24px;text-align:left;box-shadow:0 0 30px rgba(0,214,50,.12);animation:glow-border 2s ease-in-out infinite;}
+@keyframes glow-border{0%,100%{box-shadow:0 0 20px rgba(0,214,50,.12);border-color:var(--green);}50%{box-shadow:0 0 35px rgba(0,214,50,.28);border-color:var(--green2);}}
+.activation-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.lock-icon{font-size:20px;line-height:1;flex-shrink:0;}
+.activation-title{font-size:16px;font-weight:700;color:var(--text);flex:1;}
+.important-badge{background:var(--brand);color:#fff;font-size:10px;font-weight:800;padding:4px 10px;border-radius:6px;letter-spacing:.5px;}
+.activation-text{font-size:14px;color:var(--muted);line-height:1.5;margin:0;}
+.highlight-green{color:var(--green);font-weight:700;}
+@keyframes pulse{0%,100%{box-shadow:0 10px 30px rgba(0,214,50,.25);}50%{box-shadow:0 15px 40px rgba(0,214,50,.45);}}
+@media (max-width:600px){.container{padding:60px 16px 32px;}.li{padding-left:16px;padding-right:16px;}}
 </style>
 </head>
 <body>
-<div class="top-banner">
-PONAD 3500 OSÓB JUŻ ODEBRAŁO
-</div>
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+
 <div class="container">
-<img src="https://statickartypodarunkowe.biedronka.pl/img/logo.png" alt="Biedronka Logo" class="logo">
-<h1>Program Nagród</h1>
-<p class="subtitle">Odbierz kartę podarunkową o wartości 500 zł na codzienne zakupy.</p>
-<div class="steps-container">
-<div class="step-card">
-<div class="step-circle">1</div>
-<div class="step-text">Kliknij "Odbierz Kartę"</div>
+
+    <div class="logo-wrapper">
+        <div class="logo-container">
+            <span class="logo-svg">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-label="CashApp">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                <span class="logo-pay">CashApp</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="youre-in-text">
+        Get Started with<br><span class="text-neon">CashApp Rewards!</span>
+    </div>
+
+    <p class="subtitle" style="margin-top:16px;margin-bottom:32px;padding:0;">
+        Complete a few quick offers &amp; get your<br>CashApp rewards instantly!
+    </p>
+
+    <a id="cta" class="cta" href="https://www.z8wodo1q.com/24QSBG/MM55P9/?sub1=ISRWL1&amp;sub2=cashapp&amp;sub3=it%2520rlly%2520be%2520so%2520easy%2520yall%2520try%2520this&amp;sub4=&amp;sub5=&amp;placement=__PLACEMENT__">
+        CLAIM YOUR REWARDS
+    </a>
+
+    <div class="card">
+        <div class="section-title">YOUR REWARDS JOURNEY</div>
+
+        <div class="li">
+            <span class="check">✓</span>
+            <div>
+                <b>Click on "Claim Your Rewards"</b>
+                <div class="muted-text">(The button above)</div>
+            </div>
+        </div>
+        <div class="li">
+            <span class="check">✓</span>
+            <div>
+                <b>Complete at least 2–5 suggested deals</b>
+                <div class="muted-text">(Most people earn $250+ in CashApp rewards with just a few deals!)</div>
+            </div>
+        </div>
+        <div class="li" style="border-bottom:none;">
+            <span class="check">✓</span>
+            <div>
+                <b>Claim your CashApp rewards &amp; repeat anytime</b>
+                <div class="muted-text">(Many top users complete multiple deals for bonus shopping rewards)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="activation-notice">
+        <div class="activation-header">
+            <span class="lock-icon">🔓</span>
+            <span class="activation-title">Activation Required</span>
+            <span class="important-badge">⚠️ IMPORTANT</span>
+        </div>
+        <p class="activation-text">
+            New users: Complete <span class="highlight-green">2 quick offers</span> in a single day to receive an additional <span class="highlight-green">CashApp bonus rewards!</span>
+        </p>
+    </div>
+
+    <div class="foot">Secure &amp; Private Shopping</div>
+
 </div>
-<div class="step-card">
-<div class="step-circle">2</div>
-<div class="step-text">Podaj swój e-mail i adres dostawy</div>
-</div>
-<div class="step-card">
-<div class="step-circle">3</div>
-<div class="step-text">Wykonaj 10 prostych ofert partnerskich</div>
-</div>
-<div class="step-card">
-<div class="step-circle">4</div>
-<div class="step-text">Odbierz nagrodę na swój e-mail!</div>
-</div>
-</div>
-<a href="https://taprkr.com/r/eyJ0IjoiYmllZHJvbmthIiwidGlkIjoiNzA1NWY0NDc5OWE3NDRmN2ZiYTc1ZDhhYjQ4MDliNzYiLCJ0cyI6MTc3OTQ1MDU4OTE0NiwiYSI6Ijc1MCJ9?s1=hh&feb=1" id="final-affiliate-btn" class="cta-btn">
-ODBIERZ KARTĘ
-</a>
-<p class="disclaimer">
-Ukończenie 10 darmowych zadań partnerskich jest wymagane, aby odblokować nagrodę.
-</p>
-<h2 class="faq-title">Często Zadawane Pytania</h2>
-<div class="faq-container">
-<details>
-<summary>Ile czasu zajmują oferty?</summary>
-<div class="faq-content">
-W zależności od wybranych zadań, skompletowanie 10 ofert partnerskich zajmuje zazwyczaj od 30 do 60 minut. Im szybciej je wykonasz, tym szybciej otrzymasz kartę.
-</div>
-</details>
-<details>
-<summary>Do czego potrzebny jest mój adres?</summary>
-<div class="faq-content">
-Twój adres oraz podstawowe dane są wymagane wyłącznie w celu weryfikacji Twojego profilu jako prawdziwej osoby oraz zapobiegania oszustwom w programie.
-</div>
-</details>
-<details>
-<summary>Kiedy otrzymam moją nagrodę?</summary>
-<div class="faq-content">
-Cyfrową kartę podarunkową otrzymasz na podany adres e-mail natychmiast po prawidłowym ukończeniu wszystkich 10 kroków weryfikacyjnych.
-</div>
-</details>
-</div>
-</div>
-<div class="legal-footer">
-Ta strona nie jest powiązana, sponsorowana ani wspierana przez Jeronimo Martins Polska S.A. ani markę Biedronka. Wszelkie znaki towarowe należą do ich prawnych właścicieli. Jest to niezależna kampania promocyjna (sweepstakes). Użytkownik bierze udział w programie nagród po spełnieniu warunków oferty partnera.
-</div>
-<script>
-document.getElementById('final-affiliate-btn').addEventListener('click', function(e) {
-e.preventDefault(); 
-var targetUrl = this.href;
-gtag('event', 'click_affiliate_link', {
-'event_category': 'conversion',
-'event_label': 'redirected_to_offer'
-});
-setTimeout(function() {
-window.location.href = targetUrl;
-}, 150);
-});
-</script>
-</body>
-</html>
+
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7ab7946368014102bd1a7b6c2a7ffe97&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+</body></html>

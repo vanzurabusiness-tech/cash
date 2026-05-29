@@ -7,9 +7,13 @@
 *{box-sizing:border-box}
 html,body{margin:0;height:100%}
 body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Helvetica,Arial,sans-serif;overflow-x:hidden;min-height:100vh;line-height:1.47059;font-weight:400;letter-spacing:-.01em;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(0,214,50,.10),transparent),linear-gradient(180deg,#f5f5f7 0%,#fafafa 50%,#eef1f3 100%);position:relative;}
+.bg-orb{position:fixed;border-radius:50%;filter:blur(80px);opacity:.18;pointer-events:none;z-index:0;}
+.orb1{width:400px;height:400px;background:radial-gradient(circle,rgba(0,214,50,.30),transparent);top:-100px;left:-100px;animation:float1 20s ease-in-out infinite;}
+.orb2{width:300px;height:300px;background:radial-gradient(circle,rgba(29,29,31,.18),transparent);bottom:-50px;right:-50px;animation:float2 15s ease-in-out infinite;}
+@keyframes float1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(50px,50px) scale(1.1);}}
+@keyframes float2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-30px,-40px) scale(1.15);}}
 .container{max-width:480px;margin:0 auto;padding:60px 20px 40px;text-align:center;position:relative;z-index:1;}
 
-/* FIXED: Green box, transparent logo, no filters */
 .logo-wrapper{display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
 .logo-container{
     width:260px;
@@ -19,13 +23,21 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
     align-items:center;
     justify-content:center;
     background:var(--green);
+    border:none;
     box-shadow:0 12px 40px rgba(0,214,50,.35);
     overflow:hidden;
+    padding:20px;
+    transition:transform .3s ease;
 }
+.logo-container:hover{transform:scale(1.05);}
+
+/* FIXED: This logo is already white with a transparent background */
 .logo-container img {
-    width: 60%;
-    height: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
+    filter: none; /* No filter needed */
 }
 
 .youre-in-text{font-size:clamp(26px,7.5vw,42px);font-weight:900;line-height:1.15;color:var(--brand);text-shadow:0 2px 4px rgba(0,0,0,.06);white-space:nowrap;}
@@ -34,32 +46,92 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
 .card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;text-align:left;backdrop-filter:blur(20px);box-shadow:0 8px 32px rgba(0,0,0,.08);position:relative;padding:0;margin-top:40px;}
 .section-title{font-size:14px;font-weight:700;text-align:center;margin:0;padding:24px 0;color:var(--muted);font-family:-apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:1px;text-transform:uppercase;}
 .li{display:flex;gap:16px;padding:20px 24px;border-bottom:1px solid rgba(0,0,0,.06);align-items:flex-start;text-align:left;background:transparent;}
+.li:first-of-type{border-top:1px solid rgba(0,0,0,.06);}
 .li:last-child{border-bottom:0}
 .check{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--green);font-size:14px;font-weight:700;color:#fff;flex-shrink:0;box-shadow:0 0 10px var(--brand-glow);}
 .li b{display:block;color:var(--text);font-size:16px;margin-bottom:4px;font-weight:700;}
 .muted-text{color:var(--muted);font-size:13px;line-height:1.4;}
 .cta{display:block;width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff!important;font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:.5px;border:0;border-radius:16px;padding:20px;margin-top:30px;margin-bottom:40px;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,214,50,.25);transition:all .3s ease;animation:pulse 3s ease-in-out infinite;}
-.activation-notice{background:rgba(0,214,50,.06);border:2px solid var(--green);border-radius:16px;padding:20px;margin-top:24px;text-align:left;box-shadow:0 0 30px rgba(0,214,50,.12);}
+.cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transition:left .5s;}
+.cta:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(0,214,50,.4);}
+.cta:hover::before{left:100%;}
+.foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.7;}
+.activation-notice{background:rgba(0,214,50,.06);border:2px solid var(--green);border-radius:16px;padding:20px;margin-top:24px;text-align:left;box-shadow:0 0 30px rgba(0,214,50,.12);animation:glow-border 2s ease-in-out infinite;}
+@keyframes glow-border{0%,100%{box-shadow:0 0 20px rgba(0,214,50,.12);border-color:var(--green);}50%{box-shadow:0 0 35px rgba(0,214,50,.28);border-color:var(--green2);}}
+.activation-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.lock-icon{font-size:20px;line-height:1;flex-shrink:0;}
+.activation-title{font-size:16px;font-weight:700;color:var(--text);flex:1;}
+.important-badge{background:var(--brand);color:#fff;font-size:10px;font-weight:800;padding:4px 10px;border-radius:6px;letter-spacing:.5px;}
+.activation-text{font-size:14px;color:var(--muted);line-height:1.5;margin:0;}
 .highlight-green{color:var(--green);font-weight:700;}
 @keyframes pulse{0%,100%{box-shadow:0 10px 30px rgba(0,214,50,.25);}50%{box-shadow:0 15px 40px rgba(0,214,50,.45);}}
+@media (max-width:600px){.container{padding:60px 16px 32px;}.li{padding-left:16px;padding-right:16px;}}
 </style>
 </head>
 <body>
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+
 <div class="container">
+
     <div class="logo-wrapper">
         <div class="logo-container">
-            <!-- Uses a clean, pre-transparent white logo -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Cash_App_logo.svg/1200px-Cash_App_logo.svg.png" alt="CashApp">
+            <!-- This URL is a white Cash App logo -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cash_App_logo_white.png" alt="CashApp">
         </div>
     </div>
-    <div class="youre-in-text">Get Started with<br><span class="text-neon">CashApp Rewards!</span></div>
-    <p class="subtitle" style="margin-top:16px;margin-bottom:32px;padding:0;">Complete a few quick offers &amp; get your<br>CashApp rewards instantly!</p>
-    <a id="cta" class="cta" href="#">CLAIM YOUR REWARDS</a>
+
+    <div class="youre-in-text">
+        Get Started with<br><span class="text-neon">CashApp Rewards!</span>
+    </div>
+
+    <p class="subtitle" style="margin-top:16px;margin-bottom:32px;padding:0;">
+        Complete a few quick offers &amp; get your<br>CashApp rewards instantly!
+    </p>
+
+    <a id="cta" class="cta" href="#">
+        CLAIM YOUR REWARDS
+    </a>
+
     <div class="card">
         <div class="section-title">YOUR REWARDS JOURNEY</div>
-        <div class="li"><span class="check">✓</span><div><b>Click on "Claim Your Rewards"</b><div class="muted-text">(The button above)</div></div></div>
-        <div class="li"><span class="check">✓</span><div><b>Complete at least 2–5 suggested deals</b><div class="muted-text">(Most people earn $250+ in CashApp rewards with just a few deals!)</div></div></div>
-        <div class="li" style="border-bottom:none;"><span class="check">✓</span><div><b>Claim your CashApp rewards &amp; repeat anytime</b><div class="muted-text">(Many top users complete multiple deals for bonus shopping rewards)</div></div></div>
+
+        <div class="li">
+            <span class="check">✓</span>
+            <div>
+                <b>Click on "Claim Your Rewards"</b>
+                <div class="muted-text">(The button above)</div>
+            </div>
+        </div>
+        <div class="li">
+            <span class="check">✓</span>
+            <div>
+                <b>Complete at least 2–5 suggested deals</b>
+                <div class="muted-text">(Most people earn $250+ in CashApp rewards with just a few deals!)</div>
+            </div>
+        </div>
+        <div class="li" style="border-bottom:none;">
+            <span class="check">✓</span>
+            <div>
+                <b>Claim your CashApp rewards &amp; repeat anytime</b>
+                <div class="muted-text">(Many top users complete multiple deals for bonus shopping rewards)</div>
+            </div>
+        </div>
     </div>
+
+    <div class="activation-notice">
+        <div class="activation-header">
+            <span class="lock-icon">🔓</span>
+            <span class="activation-title">Activation Required</span>
+            <span class="important-badge">⚠️ IMPORTANT</span>
+        </div>
+        <p class="activation-text">
+            New users: Complete <span class="highlight-green">2 quick offers</span> in a single day to receive an additional <span class="highlight-green">CashApp bonus rewards!</span>
+        </p>
+    </div>
+
+    <div class="foot">Secure &amp; Private Shopping</div>
+
 </div>
+
 </body></html>

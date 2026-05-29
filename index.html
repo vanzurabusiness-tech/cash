@@ -13,9 +13,31 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
 @keyframes float1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(50px,50px) scale(1.1);}}
 @keyframes float2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-30px,-40px) scale(1.15);}}
 .container{max-width:480px;margin:0 auto;padding:60px 20px 40px;text-align:center;position:relative;z-index:1;}
+
+/* FIXED LOGO CONTAINER TO MATCH APPLE PAY EXACTLY */
 .logo-wrapper{display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
-.logo-container{width:160px;height:100px;border-radius:24px;display:flex;align-items:center;justify-content:center;background:var(--green);border:none;box-shadow:0 10px 40px rgba(0,214,50,.22);overflow:hidden;padding:0;transition:transform .3s ease;}
+.logo-container{
+    width:150px;
+    height:100px;
+    border-radius:26px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#000;
+    border:none;
+    box-shadow:0 10px 40px rgba(0,0,0,.22);
+    overflow:hidden;
+    padding:0;
+    transition:transform .3s ease;
+}
 .logo-container:hover{transform:scale(1.05);}
+.logo-container img {
+    width: 75%;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
 .youre-in-text{font-size:clamp(26px,7.5vw,42px);font-weight:900;line-height:1.15;color:var(--brand);text-shadow:0 2px 4px rgba(0,0,0,.06);white-space:nowrap;}
 .text-neon{color:var(--green);}
 .subtitle{font-size:15px;color:var(--muted);line-height:1.5;margin-bottom:30px;padding:0 10px;}
@@ -52,7 +74,7 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
 
     <div class="logo-wrapper">
         <div class="logo-container">
-            <img src="https://cash-f.squarecdn.com/web/marketing/dec1a8f23038e5127dbc6dbfc4e515b6d610c440/assets/images/press/logotype.png" alt="CashApp" style="width: 100%; height: auto; display: block; object-fit: contain; filter: brightness(0) invert(1); transform: scale(2);">
+            <img src="https://cash-f.squarecdn.com/web/marketing/dec1a8f23038e5127dbc6dbfc4e515b6d610c440/assets/images/press/logotype.png" alt="CashApp">
         </div>
     </div>
 
@@ -109,4 +131,6 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
 
 </div>
 
-<script defer="" src="https://
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7ab7946368014102bd1a7b6c2a7ffe97&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+</body></html>

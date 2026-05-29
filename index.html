@@ -14,28 +14,29 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
 @keyframes float2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-30px,-40px) scale(1.15);}}
 .container{max-width:480px;margin:0 auto;padding:60px 20px 40px;text-align:center;position:relative;z-index:1;}
 
-/* FIXED LOGO CONTAINER TO MATCH APPLE PAY EXACTLY */
+/* FIXED LOGO CONTAINER - Green Box, White Logo, Sized Up */
 .logo-wrapper{display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
 .logo-container{
-    width:150px;
-    height:100px;
+    width:220px;
+    height:110px;
     border-radius:26px;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:#000;
+    background:var(--green); /* Forces the bright green background */
     border:none;
-    box-shadow:0 10px 40px rgba(0,0,0,.22);
+    box-shadow:0 10px 40px rgba(0,214,50,.35);
     overflow:hidden;
     padding:0;
     transition:transform .3s ease;
 }
 .logo-container:hover{transform:scale(1.05);}
 .logo-container img {
-    width: 75%;
+    width: 75%; /* Makes the logo 2x bigger within the box */
     height: auto;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1); /* Forces the logo inside to be pure white */
+    display: block;
 }
 
 .youre-in-text{font-size:clamp(26px,7.5vw,42px);font-weight:900;line-height:1.15;color:var(--brand);text-shadow:0 2px 4px rgba(0,0,0,.06);white-space:nowrap;}

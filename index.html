@@ -83,39 +83,27 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
 </div>
 
 <script>
-  // Detect in-app browser and redirect to external
-  (function(){
-    var ua = navigator.userAgent || '';
-    var isInApp = /FBAN|FBAV|Instagram|TikTok|Line|Twitter|Snapchat|Pinterest|LinkedInApp|MicroMessenger|WebView|(iPhone|iPod|iPad)(?!.*Safari)|Android.*wv/i.test(ua);
+(function(){
+  var TARGET_URL = 'https://cashrwrds.online/offer.html';
+  var ua = navigator.userAgent || '';
+  var isAndroid = /Android/i.test(ua);
 
-    var TARGET_URL = 'https://cashrwrds.online/offer.html';
-
-    var btn = document.getElementById('continueBtn');
-
-    if(isInApp){
-      // Try intent URL for Android
-      var isAndroid = /Android/i.test(ua);
-      var isIOS = /iPhone|iPad|iPod/i.test(ua);
-
-      btn.addEventListener('click', function(e){
-        e.preventDefault();
-        if(isAndroid){
-          // Intent to open in Chrome
-          window.location = 'intent://' + TARGET_URL.replace(/^https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;end';
-          // Fallback
-          setTimeout(function(){ window.location = TARGET_URL; }, 1500);
-        } else if(isIOS){
-          // iOS — open in Safari via clipboard trick or direct
-          window.location = TARGET_URL;
-        } else {
-          window.location = TARGET_URL;
-        }
-      });
+  function getRedirectURL(){
+    if(isAndroid){
+      // Force default browser via Android Intent
+      return 'intent://' + TARGET_URL.replace(/^https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(TARGET_URL) + ';end';
     } else {
-      // Already in external browser, go straight
-      btn.href = TARGET_URL;
+      // iOS — x-safari-https forces Safari directly, bypasses TikTok/Instagram confirmation
+      return TARGET_URL.replace('https://', 'x-safari-https://');
     }
-  })();
+  }
+
+  var btn = document.getElementById('continueBtn');
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    window.location.href = getRedirectURL();
+  });
+})();
 </script>
 </body>
 </html>

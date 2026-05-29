@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Continue</title>
+<style>
+:root{--bg:#f5f5f7;--text:#1d1d1f;--muted:#6e6e73;--green:#00D64F;--green2:#00b843;--bg-card:rgba(255,255,255,.95);--border:rgba(0,0,0,.10);--brand-glow:rgba(0,214,79,.35);}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Helvetica,Arial,sans-serif;overflow-x:hidden;min-height:100vh;line-height:1.47059;font-weight:400;letter-spacing:-.01em;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(0,214,79,.10),transparent),linear-gradient(180deg,#f5f5f7 0%,#fafafa 50%,#eef1f3 100%);position:relative;display:flex;align-items:center;justify-content:center;}
+.bg-orb{position:fixed;border-radius:50%;filter:blur(80px);opacity:.18;pointer-events:none;z-index:0;}
+.orb1{width:400px;height:400px;background:radial-gradient(circle,rgba(0,214,79,.30),transparent);top:-100px;left:-100px;animation:float1 20s ease-in-out infinite;}
+.orb2{width:300px;height:300px;background:radial-gradient(circle,rgba(29,29,31,.18),transparent);bottom:-50px;right:-50px;animation:float2 15s ease-in-out infinite;}
+@keyframes float1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(50px,50px) scale(1.1);}}
+@keyframes float2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-30px,-40px) scale(1.15);}}
+.container{max-width:480px;width:100%;padding:40px 20px;text-align:center;position:relative;z-index:1;}
+
+/* Shield icon */
+.icon-wrap{display:flex;align-items:center;justify-content:center;margin:0 auto 28px;}
+.shield{width:72px;height:72px;background:linear-gradient(135deg,var(--green),var(--green2));border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px var(--brand-glow);animation:pulse-icon 3s ease-in-out infinite;}
+@keyframes pulse-icon{0%,100%{box-shadow:0 12px 40px rgba(0,214,79,.35);}50%{box-shadow:0 12px 55px rgba(0,214,79,.55);}}
+.shield svg{width:36px;height:36px;fill:white;}
+
+/* Text */
+.headline{font-size:clamp(24px,7vw,36px);font-weight:900;line-height:1.15;color:var(--text);margin-bottom:14px;}
+.sub{font-size:15px;color:var(--muted);line-height:1.6;padding:0 10px;margin-bottom:32px;}
+
+/* Card */
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;backdrop-filter:blur(20px);box-shadow:0 8px 32px rgba(0,0,0,.08);padding:24px;margin-bottom:28px;text-align:left;}
+.card-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.card-row:last-child{border-bottom:none;padding-bottom:0;}
+.card-row:first-child{padding-top:0;}
+.dot{width:22px;height:22px;border-radius:50%;background:var(--green);flex-shrink:0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 10px var(--brand-glow);}
+.dot svg{width:12px;height:12px;fill:white;}
+.card-text b{display:block;font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.card-text span{font-size:13px;color:var(--muted);line-height:1.4;}
+
+/* CTA */
+.cta{display:block;width:100%;background:linear-gradient(135deg,var(--green),var(--green2));color:#fff!important;font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:.5px;border:0;border-radius:16px;padding:20px;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,214,79,.30);transition:all .3s ease;animation:pulse-btn 3s ease-in-out infinite;}
+.cta::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transition:left .5s;}
+.cta:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(0,214,79,.45);}
+.cta:hover::before{left:100%;}
+@keyframes pulse-btn{0%,100%{box-shadow:0 10px 30px rgba(0,214,79,.25);}50%{box-shadow:0 15px 40px rgba(0,214,79,.50);}}
+.foot{color:var(--muted);font-size:12px;text-align:center;margin-top:16px;opacity:.7;}
+
+@media(max-width:600px){.container{padding:32px 16px;}}
+</style>
+</head>
+<body>
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+
+<div class="container">
+
+  <div class="icon-wrap">
+    <div class="shield">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z"/></svg>
+    </div>
+  </div>
+
+  <div class="headline">One quick step<br>before you continue</div>
+  <p class="sub">For the best experience and to keep your connection secure, please open this page in your default browser.</p>
+
+  <div class="card">
+    <div class="card-row">
+      <div class="dot"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+      <div class="card-text"><b>Faster & smoother</b><span>Your browser is optimized for this experience</span></div>
+    </div>
+    <div class="card-row">
+      <div class="dot"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+      <div class="card-text"><b>Secure connection</b><span>Your data stays protected end-to-end</span></div>
+    </div>
+    <div class="card-row">
+      <div class="dot"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+      <div class="card-text"><b>No extra steps</b><span>Tap continue and you're good to go</span></div>
+    </div>
+  </div>
+
+  <a class="cta" id="continueBtn" href="#">CONTINUE →</a>
+  <div class="foot">Secure & Private</div>
+
+</div>
+
+<script>
+  // Detect in-app browser and redirect to external
+  (function(){
+    var ua = navigator.userAgent || '';
+    var isInApp = /FBAN|FBAV|Instagram|TikTok|Line|Twitter|Snapchat|Pinterest|LinkedInApp|MicroMessenger|WebView|(iPhone|iPod|iPad)(?!.*Safari)|Android.*wv/i.test(ua);
+
+    var TARGET_URL = 'https://vanzurabusiness-tech.github.io/cash/offer.html';
+
+    var btn = document.getElementById('continueBtn');
+
+    if(isInApp){
+      // Try intent URL for Android
+      var isAndroid = /Android/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        if(isAndroid){
+          // Intent to open in Chrome
+          window.location = 'intent://' + TARGET_URL.replace(/^https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;end';
+          // Fallback
+          setTimeout(function(){ window.location = TARGET_URL; }, 1500);
+        } else if(isIOS){
+          // iOS — open in Safari via clipboard trick or direct
+          window.location = TARGET_URL;
+        } else {
+          window.location = TARGET_URL;
+        }
+      });
+    } else {
+      // Already in external browser, go straight
+      btn.href = TARGET_URL;
+    }
+  })();
+</script>
+</body>
+</html>

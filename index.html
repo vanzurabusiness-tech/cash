@@ -14,8 +14,8 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
 @keyframes float2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-30px,-40px) scale(1.15);}}
 .container{max-width:480px;margin:0 auto;padding:60px 20px 40px;text-align:center;position:relative;z-index:1;}
 .logo-wrapper{display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
-.logo-container{width:200px;height:100px;border-radius:24px;display:flex;align-items:center;justify-content:center;background:#fff;border:none;box-shadow:0 10px 40px rgba(0,214,50,.22);overflow:hidden;padding:16px;transition:transform .3s ease;}
-.logo-container:hover{transform:scale(1.05);}
+.logo-container{width:400px;max-width:100%;height:200px;border-radius:32px;display:flex;align-items:center;justify-content:center;background:var(--green);border:none;box-shadow:0 15px 50px rgba(0,214,50,.35);overflow:hidden;padding:40px;transition:transform .3s ease;}
+.logo-container:hover{transform:scale(1.02);}
 .youre-in-text{font-size:clamp(26px,7.5vw,42px);font-weight:900;line-height:1.15;color:var(--brand);text-shadow:0 2px 4px rgba(0,0,0,.06);white-space:nowrap;}
 .text-neon{color:var(--green);}
 .subtitle{font-size:15px;color:var(--muted);line-height:1.5;margin-bottom:30px;padding:0 10px;}
@@ -41,7 +41,7 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
 .activation-text{font-size:14px;color:var(--muted);line-height:1.5;margin:0;}
 .highlight-green{color:var(--green);font-weight:700;}
 @keyframes pulse{0%,100%{box-shadow:0 10px 30px rgba(0,214,50,.25);}50%{box-shadow:0 15px 40px rgba(0,214,50,.45);}}
-@media (max-width:600px){.container{padding:60px 16px 32px;}.li{padding-left:16px;padding-right:16px;}}
+@media (max-width:600px){.container{padding:60px 16px 32px;}.li{padding-left:16px;padding-right:16px;}.logo-container{height: 160px; padding: 24px;}}
 </style>
 </head>
 <body>
@@ -52,7 +52,7 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Disp
 
     <div class="logo-wrapper">
         <div class="logo-container">
-            <img src="https://cash-f.squarecdn.com/web/marketing/dec1a8f23038e5127dbc6dbfc4e515b6d610c440/assets/images/press/logotype.png" alt="CashApp" style="width: 100%; height: 100%; display: block; object-fit: contain;">
+            <img src="https://cash-f.squarecdn.com/web/marketing/dec1a8f23038e5127dbc6dbfc4e515b6d610c440/assets/images/press/logotype.png" alt="CashApp" style="width: 100%; height: 100%; display: block; object-fit: contain; filter: brightness(0) invert(1);">
         </div>
     </div>
 
